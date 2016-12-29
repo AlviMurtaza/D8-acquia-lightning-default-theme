@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains YOUR_THEME_NAME theme configurations.
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to customize the site after Lightning has been
+ * installed.
+ *
+ * This module is automatically enabled via the lightning.extend.yml
+ * file.
+ *
+ * @see system_install()
+ */
+
+function d8_default_theme_install() {
+  // Enable and set YOUR_THEME_NAME as default theme.
+  \Drupal::service('theme_installer')->install(array('YOUR_THEME_NAME'), TRUE);
+  \Drupal::configFactory()->getEditable('system.theme')->set('default', 'YOUR_THEME_NAME')->save(TRUE);
+}
